@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Vroom.Models.Make
+
+<h2>Edit make</h2>
+<form method="post" asp-action="edit" asp-controller="make">
+    <div class="form-group row">
+        <div class="col-sm-2">
+            <label asp-for="Name"></label>
+        </div>
+            <div class="col-sm-4">
+                <input class="form-control" asp-for="Name" />
+            </div>
+     
+
+        <div class="form-group">
+            <input type="submit" value="Update" asp-route-id="@Model.Id" class="btn btn-outline-info"  />
+          
+            </div>
+
+
+    </div>
+</form>
+
+@*<div class="form-group row ">
+    <div class="col-sm-2">
+        <label asp-for="Name"></label>
+    </div>
+    <div class="col-sm-4">
+        <input class="form-control" asp-for="Name" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-outline-success" style="width:auto" />
+        <a class="btn btn-outline-primary" asp-action="IndexMakeList" style="width:auto">Back</a>
+    </div>*@

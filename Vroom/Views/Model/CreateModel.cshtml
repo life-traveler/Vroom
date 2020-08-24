@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Vroom.Models.ViewModels.ModelViewModel
+
+<h2>Add Model</h2>
+
+<form method="post" asp-controller="model" asp-action="CreateModel">
+    <div class="form-group row">
+        <div class="col-2">
+            <label asp-for="Makes"></label>
+        </div>
+        <div class="col-4">
+            @*With Ienumerable we cannot use with select and convert list to select list item*@
+            <select asp-for="Model.MakeFK" asp-items="Model.selectListItems(Model.Makes)" class="form-control"></select>
+
+
+        </div>
+
+        <div class="col-2">
+            <label asp-for="Model.Name"></label>
+        </div>
+        <div class="col-4">
+            <input asp-for="Model.Name" class="form-control" />
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <button class="=btn btn-outline-info">Create</button>
+        <a class="btn btn-outline-primary" asp-action="IndexModel" asp-controller="model">Back</a>
+    </div>
+</form>
+
+

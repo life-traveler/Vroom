@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Vroom.Models.Make
+
+@{
+    ViewBag.Title = "Add make";
+}
+
+<h2>Add Vehicle Make</h2>
+<form method="post"asp-controller="make" asp-action="Create">
+   
+    <div class="form-group row ">
+        <div class="col-sm-2">
+            <label asp-for="Name"></label>
+        </div>
+        <div class="col-sm-4">
+            <input class="form-control" asp-for="Name" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-outline-success" style="width:auto"/>
+            <a class="btn btn-outline-primary" asp-action="IndexMakeList" style="width:auto">Back</a>
+        </div>
+    </div>
+ </form>
+<!--</form>
+<h2 class="text-info">Add Vehicle Make</h2>
+<form method="post" action="Create">-->
+    @*<div class="container">*@
+    <!--<div class="form-group row ">
+        <div class="col-sm-2">
+            <label asp-for="Name"></label>
+        </div>
+        <div class="col-sm-12">
+            <input class="form-control" asp-for="Name" />
+        </div>
+
+        <div class="form-group row">
+            <input type="submit" class="btn btn-outline-success" value="Create" />
+            <a class="btn btn-outline-primary">Back</a>
+        </div>
+
+    </div>-->
+
+    @*</div>*@
+
+<!--</form>-->
