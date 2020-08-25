@@ -15,11 +15,13 @@
         </div>
         <div class="col-4">
             @*With Ienumerable we cannot use with select and convert list to select list item*@
+            @* With select list we cannot use IEnumerable of makes *@
             <select asp-for="Model.MakeFK" asp-items="Model.selectListItems(Model.Makes)" class="form-control"></select>
-
+        </div>
 
         </div>
 
+    <div class="form-group row">
         <div class="col-2">
             <label asp-for="Model.Name"></label>
         </div>
@@ -29,8 +31,9 @@
 
     </div>
 
-    <div class="form-group">
-        <button class="=btn btn-outline-info">Create</button>
+    <div class="form-group ">
+        <input type="submit" value="create" class="btn btn-outline-primary"/>
+        
         <a class="btn btn-outline-primary" asp-action="IndexModel" asp-controller="model">Back</a>
     </div>
 </form>

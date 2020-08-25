@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+@model Vroom.Models.ViewModels.ModelViewModel
+
+    <h2>Edit Model of vehicle</h2>
+    <form method="post" asp-action="EditModel" asp-controller="model">
+        <input hidden asp-for="Model.Id"/>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Makes"></label>
+            </div>
+            <div class="col-4">
+                <select asp-for="Model.MakeFK" asp-items="Model.selectListItems(Model.Makes)" class="form-control"> </select>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Model"></label>
+            </div>
+            <div class="col-4">
+                <input asp-for="Model.Name" class="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group ">
+           
+                <input type="submit" value="Update" class="btn btn-outline-success" />
+
+                <a class="btn btn-outline-primary" asp-action="IndexModel" asp-controller="model">Back</a>
+         
+        </div>
+    </form>
+    

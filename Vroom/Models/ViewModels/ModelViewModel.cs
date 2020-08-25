@@ -11,10 +11,13 @@ namespace Vroom.Models.ViewModels
         //type of model
         public Model Model { get; set; }
 
+        //display the list of makes in the dropdown on views page
         public IEnumerable<Make> Makes { get; set; }
         
+        //convert <selectlist> to <selectlistitem>
        public IEnumerable<SelectListItem> selectListItems(IEnumerable<Make>Items)
         {
+            //variable of list of selectlistitem
             List<SelectListItem> MakeList = new List<SelectListItem>();
             SelectListItem sli = new SelectListItem
             {
