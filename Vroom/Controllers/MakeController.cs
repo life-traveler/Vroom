@@ -39,7 +39,7 @@ namespace Vroom.Controllers
 
                 _vroomAppDbContext.Update(make);
                 _vroomAppDbContext.SaveChanges();
-                return View(nameof(IndexMakeList));
+                return RedirectToAction(nameof(IndexMakeList));
 
             }
             return View();

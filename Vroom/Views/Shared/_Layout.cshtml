@@ -36,6 +36,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -43,23 +44,14 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Masters</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item"asp-action="IndexModel" asp-controller="Model">Model</a>
+                                <a class="dropdown-item" asp-action="IndexModel" asp-controller="Model">Model</a>
                                 <a class="dropdown-item" asp-action="IndexMakeList" asp-controller="Make">Make</a>
                             </div>
                         </li>
-
-                        @*<li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" arai-haspopup="true" area-expanded="false">Manage</a>
-
-
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a asp-action="ListUsers" asp-controller="Administration" class="dropdown-item">Users</a>
-                                <a asp-action="ListRoles" asp-controller="Administration" class="dropdown-item">Roles</a>
-                            </div>
-
-                        </li>*@
                     </ul>
+
                 </div>
+               
             </div>
         </nav>
     </header>

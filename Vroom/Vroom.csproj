@@ -5,10 +5,60 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\**" />
+    <Content Remove="Areas\**" />
+    <EmbeddedResource Remove="Areas\**" />
+    <None Remove="Areas\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Controllers\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Areas\Identity\IdentityHostingStartup.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Shared\Pages\Account\AccessDenied.cshtml" />
+    <None Include="Views\Shared\Pages\Account\ConfirmEmail.cshtml" />
+    <None Include="Views\Shared\Pages\Account\ConfirmEmailChange.cshtml" />
+    <None Include="Views\Shared\Pages\Account\ExternalLogin.cshtml" />
+    <None Include="Views\Shared\Pages\Account\ForgotPassword.cshtml" />
+    <None Include="Views\Shared\Pages\Account\ForgotPasswordConfirmation.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Lockout.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Login.cshtml" />
+    <None Include="Views\Shared\Pages\Account\LoginWith2fa.cshtml" />
+    <None Include="Views\Shared\Pages\Account\LoginWithRecoveryCode.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Logout.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\ChangePassword.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\DeletePersonalData.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\Disable2fa.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\DownloadPersonalData.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\Email.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\EnableAuthenticator.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\ExternalLogins.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\GenerateRecoveryCodes.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\Index.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\PersonalData.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\ResetAuthenticator.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\SetPassword.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\ShowRecoveryCodes.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\TwoFactorAuthentication.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\_Layout.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\_ManageNav.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\_StatusMessage.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Manage\_ViewImports.cshtml" />
+    <None Include="Views\Shared\Pages\Account\Register.cshtml" />
+    <None Include="Views\Shared\Pages\Account\RegisterConfirmation.cshtml" />
+    <None Include="Views\Shared\Pages\Account\ResetPassword.cshtml" />
+    <None Include="Views\Shared\Pages\Account\ResetPasswordConfirmation.cshtml" />
+    <None Include="Views\Shared\Pages\Account\_StatusMessage.cshtml" />
+    <None Include="Views\Shared\Pages\Account\_ViewImports.cshtml" />
+    <None Include="Views\Shared\Pages\Error.cshtml" />
+    <None Include="Views\Shared\Pages\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\Shared\Pages\_ViewImports.cshtml" />
+    <None Include="Views\Shared\Pages\_ViewStart.cshtml" />
     <None Include="wwwroot\fontawesome-5.14.0-web\js\all.js" />
     <None Include="wwwroot\fontawesome-5.14.0-web\js\all.min.js" />
     <None Include="wwwroot\fontawesome-5.14.0-web\js\brands.js" />
@@ -1676,12 +1726,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
 </Project>

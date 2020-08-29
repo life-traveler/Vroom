@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -36,7 +37,14 @@ namespace Vroom
             //use integrated windows authentication instead of sql
             services.AddDbContextPool<VroomAppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default") ));
+            // services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<VroomAppDbContext>().AddDefaultTokenProviders();
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<VroomAppDbContext>()
+                .AddDefaultUI()
+                .AddDefaultTokenProviders();
+            //services.AddRazorPages();
             services.AddControllersWithViews();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +53,7 @@ namespace Vroom
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -57,6 +66,7 @@ namespace Vroom
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             ////custom route // conventional based routing
@@ -82,7 +92,7 @@ namespace Vroom
             {
                 //endpoints.MapControllerRoute()
 
-
+                endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

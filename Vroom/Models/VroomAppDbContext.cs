@@ -1,12 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Vroom.Models
 {
-    public class VroomAppDbContext : DbContext
+    public class VroomAppDbContext :IdentityDbContext<IdentityUser>
     {
         public VroomAppDbContext(DbContextOptions<VroomAppDbContext> options) : base(options)
         {
@@ -17,6 +15,7 @@ namespace Vroom.Models
         //map to database where crud operations happen
         public DbSet <Model> Models{ get; set; }
         public DbSet<Make> Makes { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Feature> Features { get; set; }
 
     }

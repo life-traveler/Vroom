@@ -32,7 +32,15 @@ namespace Vroom.Controllers
             };
         }
 
-
+        /*
+         I tested your project, the problem is in the Delete method.
+        The IndexModel View needs a IEnumerable<Vroom.Models.Model> type model, 
+        so you can't directly return the view. You can use RedirectToAction instead.
+        It can be return RedirectToAction(nameof(IndexModel)); or
+            return View(modelViewModel);
+        but not return View(nameof(IndexModel))
+         
+         */
 
         public IActionResult Delete(int id)
         {
@@ -40,7 +48,8 @@ namespace Vroom.Controllers
 
             _vroomAppDbContext.Remove(modelUser);
             _vroomAppDbContext.SaveChanges();
-            return View(nameof(IndexModel));
+            return RedirectToAction(nameof(IndexModel));
+            //return View(modelViewModel);
         }
 
 
